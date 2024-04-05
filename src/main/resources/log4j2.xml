@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- File Appender -->
+        <File name="File" fileName="logs/application.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/> <!-- Log to console -->
+        </Root>
+
+        <Logger name="com.example.BankingApp" level="INFO">
+            <AppenderRef ref="File"/> <!-- Log to file only from com.example.BankingApp-->
+        </Logger>
+
+    </Loggers>
+
+    <Properties>
+        <Property name="logDirWindows">C:\Users\Administrator\IdeaProjects\BankingApp\logs</Property>
+    </Properties>
+</Configuration>

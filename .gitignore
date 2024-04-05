@@ -43,6 +43,6 @@ out/
 .vscode/
 
 
-resources/myapplication.properties
+myapplication.properties
 accounts.csv
 test.csv

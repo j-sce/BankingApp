@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Banking application demo project">
+    <meta name="author" content="j-sce">
+    <title>All Bank Accounts</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}</style>
+</head>
+
+<body class="w3-light-grey">
+
+<h3>Bank Accounts List</h3>
+
+<table class="w3-table w3-striped w3-white">
+    <thead>
+    <tr>
+        <th>Account ID</th>
+        <th>Holder Name</th>
+        <th>Balance</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="bankAccount : ${bankAccounts}">
+        <td th:text="${bankAccount.id}"></td>
+        <td th:text="${bankAccount.holder}"></td>
+        <td th:text="${bankAccount.balance}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/" method="get">
+    <input class="w3-button w3-dark-grey" type="submit" value="Go to main page" name="Submit" />
+</form>
+
+</body>
+</html>
